@@ -21,7 +21,7 @@ module signext_tb();
             {11'b111_1100_0010 , {inputs_data_type_D[2]} ,    12'b0      },  // LDUR NEGATIVO-  | CASO 6 |
             {11'b111_1100_0000 , {inputs_data_type_D[1]} ,    12'b0      },  // STUR POSITIVO+  | CASO 5 |
             {11'b111_1100_0000 , {inputs_data_type_D[0]} ,    12'b0      },  // STUR NEGATIVO-  | CASO 4 |
-    //   | optcode 8 bit      |        data 19 bits      | rest 5 bits   |         Info      
+    //   | optcode 8 bit      |        data 19 bits      | rest 5 bits   |         Info
             {8'b101_1010_0     , {inputs_data_type_CB[1]} ,     5'b0     },  // CBZ POSITIVO+   | CASO 3 |
             {8'b101_1010_0     , {inputs_data_type_CB[0]} ,     5'b0     },  // CBZ NEGATIVO-   | CASO 2 |
 
@@ -29,7 +29,7 @@ module signext_tb();
             {inputs_data_type_NOT_INSTRUCTION[0]}                            // NOT_INSTRUCTION | CASO 0 |
     };
 
-    logic [61:0] outputs [7:0] = { 
+    logic [61:0] outputs [7:0] = {
             {{55{inputs_data_type_D[3][8]}}   , {inputs_data_type_D[3]}},      // LDUR POSITIVO+
             {{55{inputs_data_type_D[2][8]}}   , {inputs_data_type_D[2]}},      // LDUR NEGATIVO-
             {{55{inputs_data_type_D[1][8]}}   , {inputs_data_type_D[1]}},      // STUR POSITIVO+
