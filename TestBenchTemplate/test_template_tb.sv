@@ -8,7 +8,7 @@
 `define TESTVECTOR_OUTPUT_LONG 9999999
 
 
-module test_example_tb(); // (MODIFICAR NOMBRE)
+module test_template_tb(); // (MODIFICAR NOMBRE)
 
     // Configuracion del vector de test. (NO MODIFICAR!!)
     logic [31:0]  _error_count_;
@@ -19,7 +19,7 @@ module test_example_tb(); // (MODIFICAR NOMBRE)
     logic input1, output1;
 
     // Modulo a probar. (MODIFICAR EL MODULO, LAS ENTRADAS Y SALIDAS)
-    test_example dut(
+    test_template dut(
         .input1(input1),           // Input
         .output1(output1)          // Output
     );
@@ -36,7 +36,7 @@ module test_example_tb(); // (MODIFICAR NOMBRE)
         _error_count_ = 0; // (NO MODIFICAR!!)
 
         /* --------------------------------------------------------- */
-        $readmemb("test_example_tv.bin", _testvectors_); // (MODIFICAR SEGUN EL NOMBRE DEL ARCHIVO)
+        $readmemb("test_template_tv.bin", _testvectors_); // (MODIFICAR SEGUN EL NOMBRE DEL ARCHIVO)
         /* --------------------------------------------------------- */
 
         #(`CLK_FREQ*2);

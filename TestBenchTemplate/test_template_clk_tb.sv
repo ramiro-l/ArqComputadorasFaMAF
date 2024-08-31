@@ -8,7 +8,7 @@
 `define TESTVECTOR_OUTPUT_LONG 9999999
 
 
-module test_example_clk_tb(); // (MODIFICAR NOMBRE)
+module test_template_clk_tb(); // (MODIFICAR NOMBRE)
 
     logic clk, reset;
     // Configuracion del vector de test. (NO MODIFICAR!!)
@@ -20,7 +20,7 @@ module test_example_clk_tb(); // (MODIFICAR NOMBRE)
     logic input1, output1;
 
     // Modulo a probar. (MODIFICAR EL MODULO, LAS ENTRADAS Y SALIDAS)
-    test_example_clk dut(
+    test_template_clk dut(
         .input1(input1),           // Input
         .output1(output1)          // Output
     );
@@ -40,7 +40,7 @@ module test_example_clk_tb(); // (MODIFICAR NOMBRE)
         _vector_index_ = 0;
 
         /* --------------------------------------------------------- */
-        $readmemb("test_example_clk_tv.bin", _testvectors_); // (MODIFICAR SEGUN EL NOMBRE)
+        $readmemb("test_template_clk_tv.bin", _testvectors_); // (MODIFICAR SEGUN EL NOMBRE)
         /* --------------------------------------------------------- */
 
         #10; reset = 0;
