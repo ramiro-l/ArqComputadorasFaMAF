@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY alu
+set_global_assignment -name TOP_LEVEL_ENTITY adder
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:09:57  AUGUST 30, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -77,7 +77,7 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH fetch_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH regfile_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME flopr_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id flopr_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME flopr_tb -section_id flopr_tb
@@ -99,6 +99,11 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME maindec_tb -section_id ma
 set_global_assignment -name EDA_TEST_BENCH_NAME regfile_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME regfile_tb -section_id regfile_tb
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE modules/flopr.sv -section_id flopr_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/flopr_tb.sv" -section_id flopr_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE modules/signext.sv -section_id signext_tb
@@ -116,7 +121,3 @@ set_global_assignment -name EDA_TEST_BENCH_FILE modules/maindec.sv -section_id m
 set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/maindec_tb.sv" -section_id maindec_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE modules/regfile.sv -section_id regfile_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/regfile_tb.sv" -section_id regfile_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
