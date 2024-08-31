@@ -36,7 +36,7 @@ module signext_tb();
             {{55{inputs_data_type_D[0][8]}}   , {inputs_data_type_D[0]}},      // STUR NEGATIVO-
             {{45{inputs_data_type_CB[1][18]}} , {inputs_data_type_CB[1]}},  // CBZ POSITIVO+
             {{45{inputs_data_type_CB[0][18]}} , {inputs_data_type_CB[0]}},  // CBZ NEGATIVO-
-            {0},{0} // NOT_INSTRUCTION
+            {'0},{'0} // NOT_INSTRUCTION
     };
 
     logic [31:0] a;

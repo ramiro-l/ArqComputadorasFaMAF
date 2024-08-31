@@ -7,23 +7,23 @@ module execute(
 
     logic output_sl2, output_mux;
 
-    adder Add(.A(PC_E),
-              .B(output_sl2),
-              .Sum(PCBranch_E));
+    adder Add(.a(PC_E),
+              .b(output_sl2),
+              .y(PCBranch_E));
 
-    sl2   ShiftLeft2(.in(signImm_E),
-                     .out(output_sl2));
+    sl2   ShiftLeft2(.a(signImm_E),
+                     .y(output_sl2));
 
-    mux2  MUX(.in1(readData2_E),
-              .in2(signImm_E),
-              .sel(AluSrc),
-              .out(output_mux));
+    mux2  MUX(.d0(readData2_E),
+              .d1(signImm_E),
+              .s(AluSrc),
+              .y(output_mux));
 
-    alu   ALU(.in1(readData1_E),
-             .in2(output_mux),
-             .control(AluControl),
-             .result(aluResult_E),
-             .zero(zero_E));
+    alu   ALU(.a(readData1_E),
+              .b(output_mux),
+              .ALUControl(AluControl),
+              .result(aluResult_E),
+              .zero(zero_E));
 
     assign writeData_E = readData2_E;
 

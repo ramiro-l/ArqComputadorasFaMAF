@@ -1,6 +1,6 @@
 module alu_tb();
     logic [63:0] a, b, result, result_expected;
-    logic [3:0] ALUcontrol;
+    logic [3:0] ALUControl;
     logic zero, zero_expected;
     logic [30:0] errors, i;
 
@@ -38,16 +38,16 @@ module alu_tb();
         { 4'b0111 , -64'd1972 ,  64'd3314 ,  64'd3314 , 1'b0  },  // SLT -+
         { 4'b0111 ,  64'd1282 ,  64'd0    ,  64'd0    , 1'b1  },  // SLT zero
     //   op_code     a                b        result              zero        op           sign
-       { 4'b0010 , 1'b0,{63{1'b1}} , 64'd1  , {64{1'b1}}       , 1'b1  }, // ADD overflow ++
-        { 4'b0010 , {64{1'b1}}      , 64'd1  , 1'b1,{63{1'b0}}  , 1'b1  }, // ADD overflow -+
-        { 4'b0110 , {64{1'b1}}      , 64'd1  , {63{1'b1}},1'b0  , 1'b0  }  // SUB overflow -+
+       { 4'b0010 , 1'b0,{63{1'b1}} , 64'd1  ,1'b1,{63{1'b0}}   , 1'b0  }, // ADD overflow ++
+        { 4'b0010 , {64{1'b1}}      , 64'd1  ,{64{1'b0}}       , 1'b1  }, // ADD overflow -+
+        { 4'b0110 , {64{1'b1}}      , 64'd1  , {63{1'b1}},1'b0 , 1'b0  }  // SUB overflow -+
     // OBS:  En los casos de overflow se trunca el resultado y tambien perdemos el signo.
     };
 
     alu dut(
         .a(a),
         .b(b),
-        .ALUcontrol(ALUcontrol),
+        .ALUControl(ALUControl),
         .result(result),
         .zero(zero)
     );
@@ -57,16 +57,15 @@ module alu_tb();
     end
 
     always begin
-        #1ns;
-        {ALUcontrol, a, b, result_expected, zero_expected} = inputs_and_expected_outputs[i];
-        #1ns;
+        {ALUControl, a, b, result_expected, zero_expected} = inputs_and_expected_outputs[i];
+        #5ns;
 
         if (result !== result_expected || zero !== zero_expected) begin
             errors = errors + 1;
             $display("Error en el caso %d.", i);
         end
 
-         i++; #8ns;
+         i++; #5ns;
         if (inputs_and_expected_outputs[i] === 'x) begin
             $display("Errores totales: %d.", errors);
             $stop;

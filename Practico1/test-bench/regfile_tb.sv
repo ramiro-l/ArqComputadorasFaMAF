@@ -7,13 +7,13 @@ module regfile_tb();
 
     regfile dut(
         .clk(clk),
-        .w_signal(w_signal),
-        .r1_addres(r1_addres),
-        .r2_addres(r2_addres),
-        .w_addres(w_addres),
-        .w_input(w_input),
-        .r1_output(r1_output),
-        .r2_output(r2_output)
+        .we3(w_signal),
+        .ra1(r1_addres),
+        .ra2(r2_addres),
+        .wa3(w_addres),
+        .wd3(w_input),
+        .rd1(r1_output),
+        .rd2(r2_output)
     );
 
     // Incializo el clock.
