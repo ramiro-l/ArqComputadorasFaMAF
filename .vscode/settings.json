@@ -1,0 +1,16 @@
+{
+  "files.exclude": {
+    "**/db": true,
+    "**/incremental_db": true,
+    "**/output_files": true,
+    "**/*.rpt": true,
+    "**/*.qws": true
+  },
+  "search.exclude": {
+    "**/db": true,
+    "**/incremental_db": true,
+    "**/output_files": true,
+    "**/*.rpt": true,
+    "**/*.qws": true
+  }
+}
