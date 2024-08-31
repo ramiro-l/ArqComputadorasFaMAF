@@ -35,3 +35,6 @@
 incremental_db/
 db/
 _output_files/
+
+# ignore python generated files
+**/__pycache__/

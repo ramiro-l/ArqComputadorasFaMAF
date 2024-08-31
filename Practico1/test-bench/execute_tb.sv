@@ -1,6 +1,6 @@
 `timescale 1 ns / 100 ps
 `define CLK_FREQ 5
-`define TESTVECTOR_SIZE 2
+`define TESTVECTOR_SIZE 4
 `define TESTVECTOR_INPUT_LONG 261
 `define TESTVECTOR_OUTPUT_LONG 193
 
@@ -51,7 +51,7 @@ module execute_tb();
         $readmemb("execute_tv.bin", _testvectors_);
         /* --------------------------------------------------------- */
 
-        #10; reset = 0;
+        #100; reset = 0;
     end
 
 
