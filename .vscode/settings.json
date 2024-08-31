@@ -12,5 +12,9 @@
     "**/output_files": true,
     "**/*.rpt": true,
     "**/*.qws": true
+  },
+  "verilog.linting.enable": false,
+  "verible": {
+    "unpacked-dimensions-range-ordering": false
   }
 }
