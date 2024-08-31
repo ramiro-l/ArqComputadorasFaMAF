@@ -5,15 +5,24 @@ module regfile_tb();
     logic [4:0] r1_addres, r2_addres;
     logic [63:0] r1_output, r2_output;
 
-    regfile dut(clk, w_signal, r1_addres, r2_addres, w_addres, w_input, r1_output, r2_output);
+    regfile dut(
+        .clk(clk),
+        .w_signal(w_signal),
+        .r1_addres(r1_addres),
+        .r2_addres(r2_addres),
+        .w_addres(w_addres),
+        .w_input(w_input),
+        .r1_output(r1_output),
+        .r2_output(r2_output)
+    );
 
     // Incializo el clock.
     always begin
-		clk = 1; #5ns; clk = 0; #5ns;
-	end	
+        clk = 1; #5ns; clk = 0; #5ns;
+    end
      logic [31:0] errors;
 
-    initial begin  
+    initial begin
         // INICIALIZAMOS
         w_signal = '0;
         errors = 0;
@@ -37,7 +46,7 @@ module regfile_tb();
         w_signal = '1;
         for (int i = 0 ; i <= 30 ; i++ ) begin
             w_addres = i;
-            w_input = $random;
+            w_input = $urandom;
             #5ns;
             r1_addres = i;
             r2_addres = i;
@@ -68,13 +77,14 @@ module regfile_tb();
         w_input = 64'd1;
         r1_addres = 5'd31;
         r2_addres = 5'd31;
-		# 5ns;
+        # 5ns;
         if ( r1_output !== 64'b0 || r2_output !== 64'b0) begin
             $display("El registro XZR se escribio y DEJO DE SER 0");
             errors++;
         end
         # 5ns;
-		$display("Se detectaron %d errores en el test de regfile",errors);
+        $display("Se detectaron %d errores en el test de regfile",errors);
         $stop;
-	end
+    end
+
 endmodule

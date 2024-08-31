@@ -14,7 +14,7 @@ module regfile(
         64'd16, 64'd17, 64'd18, 64'd19, 64'd20, 64'd21, 64'd22, 64'd23,
         64'd24, 64'd25, 64'd26, 64'd27, 64'd28, 64'd29, 64'd30,
         64'd0 // El registro 31 siempre es el XZR.
-    }; 
+    };
 
     always_comb begin
         rd1 = regs[ra1];
@@ -26,7 +26,7 @@ module regfile(
         //  1. Que la señal de escritura esté activa.
         //  2. Que nunca escribamos en la dirección 31, osea el registo XZR.
         if (we3 === '1 & wa3 < 32'd31 ) begin
-            regs[wa3] = wd3;
+            regs[wa3] <= wd3;
         end
     end
 endmodule

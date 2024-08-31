@@ -22,7 +22,7 @@ module maindec(
                 MemRead,
                 MemWrite,
                 Branch,
-                ALUOp } = output_signals[0]; 
+                ALUOp } = output_signals[0];
             // STUR
             11'b111_1100_0000: {
                 Reg2Loc,
@@ -32,8 +32,8 @@ module maindec(
                 MemRead,
                 MemWrite,
                 Branch,
-                ALUOp } = output_signals[1]; 
-            // CBZ 
+                ALUOp } = output_signals[1];
+            // CBZ
             11'b101_1010_0???: {
                 Reg2Loc,
                 ALUSrc,
@@ -42,7 +42,7 @@ module maindec(
                 MemRead,
                 MemWrite,
                 Branch,
-                ALUOp } = output_signals[2]; 
+                ALUOp } = output_signals[2];
             // TYPE R
             11'b100_0101_1000,
             11'b110_0101_1000,
@@ -64,7 +64,7 @@ module maindec(
                 MemRead,
                 MemWrite,
                 Branch,
-                ALUOp } = output_signals[4];   
+                ALUOp } = output_signals[4];
         endcase
     end
 

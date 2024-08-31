@@ -3,12 +3,18 @@ module fetch_tb();
     logic [63:0] PCBranch_F;
     logic [63:0] imem_addr_F;
 
-    fetch dut(PCSrc_F, clk, reset, PCBranch_F, imem_addr_F);
+    fetch dut(
+        .PCSrc_F(PCSrc_F),
+        .clk(clk),
+        .reset(reset),
+        .PCBranch_F(PCBranch_F),
+        .imem_addr_F(imem_addr_F)
+    );
 
-	// Inicializo el clock
-	always begin
-		clk = 1; #5ns; clk = 0; #5ns;
-	end	
+    // Inicializo el clock
+    always begin
+        clk = 1; #5ns; clk = 0; #5ns;
+    end
 
     logic errors;
     logic [63:0] PC_aux;
@@ -21,7 +27,7 @@ module fetch_tb();
         for (int i=0; i<5; ++i) begin
             if (imem_addr_F != 64'b0) begin
                 $display("El caso %d FALLO (imem_addr_F != 0) y (reset = 1)", i);
-				errors++;
+                errors++;
             end
             # 10ns;
         end
@@ -30,7 +36,7 @@ module fetch_tb();
         reset = 0;
         if (imem_addr_F != 64'b0) begin
             $display("FAllO el caso en el que el reset se puso en 0 y verificamos que de 0.");
-			errors++;
+            errors++;
         end
         # 5ns;
         PC_aux = 64'd4;
@@ -38,7 +44,7 @@ module fetch_tb();
             # 1ns;
             if (imem_addr_F != PC_aux) begin
                 $display("El caso %d FALLO (imem_addr_F != PC_aux) y (reset = 0)", i);
-				errors++;
+                errors++;
             end
             # 4ns;
             PC_aux = PC_aux + 64'd4;
@@ -50,10 +56,11 @@ module fetch_tb();
         # 15ns;
         if (imem_addr_F != PCBranch_F) begin
             $display("El caso del PCBranch_F FALLO.");
-			errors++;
+            errors++;
         end
         # 5ns;
         $display("Ocurrieron %d errores en el fecth_tb.", errors);
-	    $stop;
+        $stop;
     end
+
 endmodule
