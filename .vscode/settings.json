@@ -3,6 +3,7 @@
     "**/db": true,
     "**/incremental_db": true,
     "**/output_files": true,
+    "**/simulation": true,
     "**/*.rpt": true,
     "**/*.qws": true,
     "**/*.bak": true
@@ -11,6 +12,7 @@
     "**/db": true,
     "**/incremental_db": true,
     "**/output_files": true,
+    "**/simulation": true,
     "**/*.rpt": true,
     "**/*.qws": true
   }
