@@ -1,4 +1,3 @@
-import numpy as np
 import random
 
 CANT_BITS = 64
@@ -6,7 +5,7 @@ MIN_NUMBER = 1000
 MAX_NUMBER = 4999
 
 if 2**CANT_BITS < MAX_NUMBER or 2**CANT_BITS < MIN_NUMBER:
-    raise Exception('Revisar CANT_BITS y MAX_NUMBER.')
+    raise ValueError('Revisar CANT_BITS y MAX_NUMBER.')
 
 
 ALU_OPERATIONS = [
@@ -42,7 +41,7 @@ def all_cases():
         # Case when result is zero
         (a, b) = random_numbers_to_apply_operation_return_zero(op_name, op_fun)
         if op_fun(a, b) != 0:
-            raise Exception('Error en la generación de casos.')
+            raise ValueError('Error en la generación de casos.')
         yield (
             f"4'b{op_code}",
             number_syvl(a),
