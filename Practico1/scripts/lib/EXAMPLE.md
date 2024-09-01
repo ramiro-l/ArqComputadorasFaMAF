@@ -40,10 +40,14 @@
     print(cases_in_hexa)
    ```
 
-7. Imprimir el nombre del archivo generado.
+7. Generar el archivo .bin
+
    ```python
     print("\nFile name: '", execute.name_file(), "'")
+    test_module.export_bin_file("./Practico1/test-bench/", "bin")
+
    ```
+
 8. Imprimir la informacion del archivo SystemVerilog.
    ```python
     print("\nSystemVerilog file info:")
@@ -87,6 +91,7 @@ print("\nHexadecimal test cases:")
 print(cases_in_hexa)
 
 print("\nFile name: '", execute.name_file(), "'")
+test_module.export_bin_file("./", "bin")
 
 print("\nSystemVerilog file info:")
 print(
