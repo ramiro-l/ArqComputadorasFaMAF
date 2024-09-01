@@ -52,13 +52,13 @@ module maindec_tb();
             Branch_expected,
             ALUOp_expected } = op_and_expected_signals[i];
             # 1ns;
-            if (Reg2Loc !== Reg2Loc_expected &
-                ALUSrc !== ALUSrc_expected &
-                MemtoReg !== MemtoReg_expected &
-                RegWrite !== RegWrite_expected &
-                MemRead !== MemRead_expected &
-                MemWrite !== MemWrite_expected &
-                Branch !== Branch_expected &
+            if (Reg2Loc !== Reg2Loc_expected |
+                ALUSrc !== ALUSrc_expected |
+                MemtoReg !== MemtoReg_expected |
+                RegWrite !== RegWrite_expected |
+                MemRead !== MemRead_expected |
+                MemWrite !== MemWrite_expected |
+                Branch !== Branch_expected |
                 ALUOp !== ALUOp_expected ) begin
                     $display("El caso %d FALLO.", i);
                     errors++;
