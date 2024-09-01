@@ -22,7 +22,6 @@
 *.summary
 *.tcl
 *~
-*example*
 *sopc_*
 
 # ignore Quartus II generated folders
