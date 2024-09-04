@@ -13,4 +13,5 @@ module ej11
     end
     assign n1 = areg & breg;
     assign n2 = n1 | creg;
+
 endmodule

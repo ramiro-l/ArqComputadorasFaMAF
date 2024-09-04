@@ -16,4 +16,5 @@ module ej15
     end
     assign L = A[7:4];
     assign Q = Q_temp;
+
 endmodule

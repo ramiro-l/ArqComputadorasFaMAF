@@ -6,4 +6,5 @@ module ej9 (input logic A, B, C, clk,
             P <= A & B;
             Z <= P | C;
         end
+
 endmodule
