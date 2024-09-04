@@ -52,7 +52,7 @@ module test_template_tb(); // (MODIFICAR NOMBRE)
             { expected_output1 } = _expected_output_;
             #`CLK_FREQ;
             // Obtenemos el output producido: (MODIFICAR SEGUN LAS SALIDAS)
-            { output1 } = _output_;
+            _output_ = { output1 } ;
             /* --------------------------------------------------------- */
 
             /* --------------------------------------------------------- */

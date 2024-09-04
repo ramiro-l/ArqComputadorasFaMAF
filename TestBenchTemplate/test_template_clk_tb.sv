@@ -72,7 +72,7 @@ module test_template_clk_tb(); // (MODIFICAR NOMBRE)
     always @(negedge clk) begin
         if (~reset) begin
             // Cargamos el test vector: (NO MODIFICAR!!)
-            {_input_, _expected_output_} = _testvectors_[i];
+            {_input_, _expected_output_} = _testvectors_[_vector_index_];
 
             /* --------------------------------------------------------- */
             // Cargamos los inputs: (MODIFICAR SEGUN LAS ENTRADAS)
@@ -81,7 +81,7 @@ module test_template_clk_tb(); // (MODIFICAR NOMBRE)
             { expected_output1 } = _expected_output_;
             #1;
             // Obtenemos el output producido: (MODIFICAR SEGUN LAS SALIDAS)
-            { output1 } = _output_;
+            _output_ = { output1 };
             /* --------------------------------------------------------- */
 
             _vector_index_++;
