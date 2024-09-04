@@ -1,6 +1,6 @@
 # ArqDeComputadoras - PRACTICOS
 
-## Descripcion
+## Descripción
 
 Para los practicos se programo en vscode y se utilizo el programa de simulacion _Quartus_, en la version 20.1 con los siguientes parametros: "Cyclone IV E" y "EP4CE22F17C6".
 
