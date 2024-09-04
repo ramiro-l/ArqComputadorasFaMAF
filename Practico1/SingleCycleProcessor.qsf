@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY detPar
+set_global_assignment -name TOP_LEVEL_ENTITY RegdetPar
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:09:57  AUGUST 30, 2024"
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
@@ -84,30 +84,9 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME regfile_tb -section_id re
 set_global_assignment -name EDA_TEST_BENCH_NAME execute_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id execute_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME execute_tb -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/flopr.sv -section_id flopr_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/flopr_tb.sv" -section_id flopr_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/signext.sv -section_id signext_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/signext_tb.sv" -section_id signext_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/alu.sv -section_id alu_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/alu_tb.sv" -section_id alu_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/flopr.sv -section_id fetch_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/mux2.sv -section_id fetch_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/adder.sv -section_id fetch_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/fetch.sv -section_id fetch_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/fetch_tb.sv" -section_id fetch_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/imem.sv -section_id imem_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/imem_tb.sv" -section_id imem_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/maindec.sv -section_id maindec_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/maindec_tb.sv" -section_id maindec_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/regfile.sv -section_id regfile_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/regfile_tb.sv" -section_id regfile_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/adder.sv -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/sl2.sv -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/alu.sv -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/mux2.sv -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE modules/execute.sv -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/execute_tv.bin" -section_id execute_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/execute_tb.sv" -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME RegdetPar_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RegdetPar_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RegdetPar_tb -section_id RegdetPar_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -137,3 +116,33 @@ set_global_assignment -name SYSTEMVERILOG_FILE extras/ej15.sv
 set_global_assignment -name SYSTEMVERILOG_FILE extras/ej17/detPar.sv
 set_global_assignment -name SYSTEMVERILOG_FILE extras/ej17/flipFlop.sv
 set_global_assignment -name SYSTEMVERILOG_FILE extras/ej17/RegdetPar.sv
+set_global_assignment -name SYSTEMVERILOG_FILE extras/ej17/RegdetPar_tb.sv
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/flopr.sv -section_id flopr_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/flopr_tb.sv" -section_id flopr_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/signext.sv -section_id signext_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/signext_tb.sv" -section_id signext_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/alu.sv -section_id alu_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/alu_tb.sv" -section_id alu_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/flopr.sv -section_id fetch_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/mux2.sv -section_id fetch_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/adder.sv -section_id fetch_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/fetch.sv -section_id fetch_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/fetch_tb.sv" -section_id fetch_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/imem.sv -section_id imem_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/imem_tb.sv" -section_id imem_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/maindec.sv -section_id maindec_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/maindec_tb.sv" -section_id maindec_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/regfile.sv -section_id regfile_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/regfile_tb.sv" -section_id regfile_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/adder.sv -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/sl2.sv -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/alu.sv -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/mux2.sv -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE modules/execute.sv -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/execute_tv.bin" -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "test-bench/execute_tb.sv" -section_id execute_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE extras/ej17/detPar.sv -section_id RegdetPar_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE extras/ej17/flipFlop.sv -section_id RegdetPar_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE extras/ej17/RegdetPar.sv -section_id RegdetPar_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE extras/ej17/RegdetPar_tv.bin -section_id RegdetPar_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE extras/ej17/RegdetPar_tb.sv -section_id RegdetPar_tb

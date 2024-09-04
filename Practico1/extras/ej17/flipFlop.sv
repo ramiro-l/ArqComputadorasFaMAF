@@ -1,11 +1,11 @@
 module flipFlop
-        (input logic in, clk, reset,
-         output logic out);
+        (input logic d, clk, reset,
+         output logic q);
 
     always_ff @(posedge clk, negedge reset)
         if (~reset)
-            out <= '0;
+            q <= 1'b0;
         else
-            out <= in;
+            q <= d;
 
 endmodule
